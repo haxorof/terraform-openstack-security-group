@@ -1,6 +1,6 @@
 # OpenStack Security Group module
 
-Terraform module which creates [security groups](https://docs.openstack.org/nova/latest/admin/security-groups.html) on OpenStack.
+Terraform module which creates security groups on OpenStack.
 
 These types of resources are supported:
 
