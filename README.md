@@ -17,7 +17,7 @@ This module aims to implement many combinations of arguments supported by OpenSt
 
 ## Terraform versions
 
-Terraform 0.12 or above is currently supported.
+Terraform 0.12.
 
 ## Examples
 
