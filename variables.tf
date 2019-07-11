@@ -13,7 +13,7 @@ variable "name" {
 }
 
 variable "name_prefix" {
-  description = "Name of security group"
+  description = "Name prefix of security group"
   type        = string
   default     = ""
 }
@@ -27,7 +27,7 @@ variable "use_name_prefix" {
 variable "description" {
   type        = string
   description = "Description of security group"
-  default     = "Security Group managed by Terraform"
+  default     = "Managed by Terraform"
 }
 
 variable "tags" {
@@ -48,19 +48,13 @@ variable "delete_default_rules" {
 variable "default_ipv4_remote_ip_prefix" {
   description = "Default remote CIDR to use for IPv4"
   type        = string
-  default     = null
+  default     = "0.0.0.0/0"
 }
 
 variable "default_ipv6_remote_ip_prefix" {
   description = "Default remote CIDR to use for IPv6"
   type        = string
-  default     = null
-}
-
-variable "default_remote_group_id" {
-  description = "Default remote group ID to use"
-  type        = string
-  default     = null
+  default     = "::/0"
 }
 
 ###############
