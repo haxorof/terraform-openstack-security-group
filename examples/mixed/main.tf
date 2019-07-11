@@ -92,3 +92,19 @@ module "ssh_ingress_tagged_sg" {
     },
   ]
 }
+
+module "do_not_create_sg" {
+  source = "../.."
+
+  create      = false
+  name        = "do-not-create-sg"
+  description = "Security group shall not be created! If you see it then something is wrong."
+
+  ingress_rules = [
+    {
+      description = "HTTP"
+      protocol    = "tcp"
+      port        = 8080
+    },
+  ]
+}
