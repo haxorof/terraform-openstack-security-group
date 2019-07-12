@@ -1,6 +1,7 @@
 # Terraform OpenStack Security Group Module
 
 [![Terraform module](https://img.shields.io/badge/dynamic/json.svg?url=https://registry.terraform.io/v1/modules/haxorof/security-group/openstack&label=haxorof/security-group/openstack&query=$.version&color=blue)](https://registry.terraform.io/modules/haxorof/security-group/openstack)
+![Module downloads](https://img.shields.io/badge/dynamic/json.svg?url=https://registry.terraform.io/v1/modules/haxorof/security-group/openstack&label=downloads&query=$.downloads&color=green)
 
 Terraform module which creates security groups on OpenStack.
 
