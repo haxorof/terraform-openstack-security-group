@@ -42,37 +42,21 @@ There are several ways to use this module but here are two examples below:
 
 ```hcl
 module "ingress_egress_rules_sg" {
-  source      = "../.."
+  source      = "haxorof/security-group/openstack"
   name        = "ingress-egress-rules-sg"
   description = "Security group that allows inbound VRRP within the group (IPv4), HTTPS/HTTP open for any (IPv4+IPv6)."
 
   ingress_rules = [
-    {
-      description = "HTTPS"
-      protocol    = "tcp"
-      port        = 443
-    },
-    {
-      description = "HTTP"
-      protocol    = "tcp"
-      port        = 80
-    },
+    { description = "HTTPS", protocol = "tcp", port = 443 },
+    { description = "HTTP", protocol = "tcp", port = 80 },
   ]
 
   ingress_rules_ipv4 = [
-    {
-      description     = "VRRP"
-      protocol        = "vrrp"
-      remote_group_id = "@self"
-    },
+    { description = "VRRP", protocol = "vrrp", remote_group_id = "@self" },
   ]
 
   egress_rules_ipv4 = [
-    {
-      description     = "VRRP"
-      protocol        = "vrrp"
-      remote_group_id = "@self"
-    },
+    { description = "VRRP", protocol = "vrrp", remote_group_id = "@self" },
   ]
 }
 ```
@@ -94,38 +78,18 @@ module "ingress_egress_rules_sg" {
 
 ```hcl
 module "raw_rules_sg" {
-  source      = "../.."
+  source      = "haxorof/security-group/openstack"
   name        = "raw-rules-sg"
   description = "Security group that allows inbound VRRP within the group (IPv4), HTTPS/HTTP open for any (IPv4+IPv6)."
 
   rules = [
-    {
-      description = "HTTPS"
-      direction   = "ingress"
-      protocol    = "tcp"
-      port        = 443
-    },
-    {
-      description = "HTTP"
-      direction   = "ingress"
-      protocol    = "tcp"
-      port        = 80
-    },
+    { description = "HTTPS", direction = "ingress", protocol = "tcp", port = 443 },
+    { description = "HTTP", direction = "ingress", protocol = "tcp", port = 80 },
   ]
 
   rules_ipv4 = [
-    {
-      description = "VRRP"
-      direction   = "ingress"
-      protocol    = "vrrp"
-      remote_group_id = "@self"
-    },
-    {
-      description = "VRRP"
-      direction   = "egress"
-      protocol    = "vrrp"
-      remote_group_id = "@self"
-    },
+    { description = "VRRP", direction = "ingress", protocol = "vrrp", remote_group_id = "@self" },
+    { description = "VRRP", direction = "egress", protocol = "vrrp", remote_group_id = "@self" },
   ]
 }
 ```
