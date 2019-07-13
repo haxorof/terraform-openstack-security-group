@@ -5,11 +5,6 @@
 
 Terraform module which creates security groups on OpenStack.
 
-These types of resources are supported:
-
-* [OpenStack Neutron Security Group v2](https://www.terraform.io/docs/providers/openstack/r/networking_secgroup_v2.html)
-* [OpenStack Neutron Security Group Rule v2](https://www.terraform.io/docs/providers/openstack/r/networking_secgroup_rule_v2.html)
-
 ## Features
 
 This module aims to implement many combinations of arguments supported by OpenStack and latest stable version of Terraform:
